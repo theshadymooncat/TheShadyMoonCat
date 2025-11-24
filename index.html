@@ -623,7 +623,7 @@ mbBtn.addEventListener('click', async ()=>{
         const ca = await fetch(caUrl);
         if (ca.ok){
           const caJson = await ca.json();
-          const image = caJson.images?.[0]?.thumbnails?.small || caJson.images?.[0]?.image || null;
+          const image = caJson.images?.[0]?.thumbnails?.['250'] || caJson.images?.[0]?.thumbnails?.small || caJson.images?.[0]?.image || null;
           nodes.push({title: r.title, image});
         } else {
           nodes.push({title: r.title, image: null});
